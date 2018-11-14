@@ -1,0 +1,13 @@
+---
+- name: metrics-server
+  hosts: master1
+  gather_facts: no
+
+  vars:
+    ansible_become_pass: "ccma"
+
+  tasks:
+    - name: Synchronization of src on the control machine to dest on the remote host 
+      synchronize: 
+        src: metrics-server
+        dest: /home/ccma/metrics-server
